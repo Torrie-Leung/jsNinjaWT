@@ -19,3 +19,8 @@ document.body.addEventListener('click',function(){
   const second = document.getElementById("second")
   addMsg(second,'Event: click')
 })
+
+var ninja = {};//assign a new object to a variable
+var ninjaArray = [];
+ninjaArray.push({}); // adds new object to an array
+ninja.data =  {};//assign a new object as a property of another object
