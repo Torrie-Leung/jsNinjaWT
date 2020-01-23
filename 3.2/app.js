@@ -35,3 +35,28 @@ function assert(condition,msg){
     console.log(msg)
   }
 }
+
+//3.3 memoizing previously computed values
+
+
+function isPrime(v){
+  //creates the cache
+  if(!isPrime.answers){
+    isPrime.answers = {}
+  }
+  //checks for chached values
+  if(isPrime.answers[v] !== undefined){
+    return isPrime.answers[v]
+  }
+  let prime = v !== 1 //1 is not a prime
+  for(let i = 2; i < v ; i++){
+    if(v % i === 0){
+      prime = false
+      break
+    }
+  }
+  return isPrime.answers[v] = prime
+}
+
+assert(isPrime(5),'5 is prime!')
+assert(isPrime.answers[5],'the answer was cached!')
